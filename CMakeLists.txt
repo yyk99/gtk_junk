@@ -2,15 +2,17 @@
 #
 #
 
-cmake_minimum_required(VERSION 3.25)
+cmake_minimum_required(VERSION 3.5)
 project (c_gui)
 
 find_package(GTK2 2.6 REQUIRED gtk)
 
 if(GTK2_FOUND)
-  include_directories(${GTK2_INCLUDE_DIRS})
+  message(STATUS "GTK2_VERSION=${GTK2_VERSION}")
+  message(STATUS "GTK2_TARGETS=${GTK2_TARGETS}")
+  
   add_executable(f1 src/f1.c)
-  target_link_libraries(f1 ${GTK2_LIBRARIES})
+  target_link_libraries(f1 PRIVATE GTK2::gtk)
 endif()
 
 
