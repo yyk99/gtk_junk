@@ -22,6 +22,9 @@ if(GTK2_FOUND)
   
   add_executable(page85 src/page85.c)
   target_link_libraries(page85 PRIVATE GTK2::gtk)
+  
+  add_executable(page87 src/page87.c)
+  target_link_libraries(page87 PRIVATE GTK2::gtk)
 
 endif()
 
